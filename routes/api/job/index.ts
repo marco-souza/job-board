@@ -1,6 +1,6 @@
 import { Handlers, Status } from "$fresh/server.ts";
 import { createJobModel } from "~/entities/job.ts";
-import { exceptionHandler } from "../../../shared/api.ts";
+import { exceptionHandler } from "~/shared/api.ts";
 
 const db = await createJobModel();
 

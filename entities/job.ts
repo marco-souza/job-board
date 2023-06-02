@@ -1,5 +1,4 @@
 import { z } from "zod";
-import { JOB_DB_KEY } from "~/shared/settings.ts";
 
 export const Job = z.object({
   id: z.string(),
@@ -19,7 +18,7 @@ export type Database<T extends { id: string }> = {
 };
 
 export async function createJobModel(): Promise<Database<Job>> {
-  const db = await Deno.openKv(JOB_DB_KEY);
+  const db = await Deno.openKv();
 
   return {
     async save(data) {
